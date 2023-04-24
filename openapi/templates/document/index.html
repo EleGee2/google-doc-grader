@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Links{% endblock %}</h1>
+    {% if g.user %}
+        <a class="action" href="{{ url_for('document.create') }}"></a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% for link in documents %}
+        <article class="post">
+            <p class="body">{{ link['link'] }}</p>
+        </article>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

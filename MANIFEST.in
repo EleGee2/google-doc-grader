@@ -1,0 +1,4 @@
+include openapi/schema.sql
+graft openapi/static
+graft openapi/templates
+global-exclude *.pyc
